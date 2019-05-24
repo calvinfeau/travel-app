@@ -1,5 +1,6 @@
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var Traveler = require('../models/traveler');
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -23,3 +24,13 @@ passport.use(new GoogleStrategy({
       });
     }
 ));
+
+passport.serializeUser(function(traveler, done) {
+    done(null, traveler.id);
+});
+
+passport.deserializeUser(function(id, done) {
+    Traveler.findById(id, function(err, traveler) {
+      done(err, traveler);
+    });
+});
