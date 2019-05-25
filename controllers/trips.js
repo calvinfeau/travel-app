@@ -1,11 +1,13 @@
 var Traveler = require('../models/traveler');
 
 module.exports = {
-    index
+    menu,
+    newTrip, 
+    index,
+    createTrip
 };
 
-function index(req, res, next) {
-    console.log(req.query)
+function menu(req, res, next) {
     // Make the query object to use with Student.find based up
     // the user has submitted the search form or now
     let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
@@ -22,4 +24,23 @@ function index(req, res, next) {
         sortKey 
         });
     });
+}
+
+function newTrip(req, res) {
+    // console.log('newtrip reached');
+    Traveler.findById(req.params.userId, function(err, traveler) {
+        console.log('traveler:', traveler);
+        res.render('trips/new', {traveler});
+    })
+}
+
+function createTrip(req, res) {
+    console.log('req.body:', req.body);
+    res.render('trips/new', {traveler})
+}
+
+function index(req, res) {
+    console.log('trip list reached');
+    
+    res.render('trips/index');
 }
