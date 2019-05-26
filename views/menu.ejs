@@ -8,10 +8,9 @@
     <title>Travel App</title>
 </head>
 <body>
-    <h1>OAUTH WORKING</h1>
+    <h1>Hi <%=traveler.name%></h1>
     <a href="/logout">Log Out</a>
-    <h3>Hi <%=user.name%></h3>
-    <a href="/trips/new/<%=user._id%>">New Trip</a>
-    <a href="/trips/index">Previous Trips</a>
+    <a href="/trips/new/<%=traveler._id%>">New Trip</a>
+    <a href="/trips/index/<%=traveler._id%>">Previous Trips</a>
 </body>
 </html>

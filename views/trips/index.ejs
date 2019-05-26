@@ -1,6 +1,11 @@
 <%- include('../partials/header') %>
 
 <h1>List of previous Trips</h1>
-<a href="">Trip 1</a>
+<%traveler.previousTrips.forEach(function(trip) { %>
+    <a href=""><%= trip.tripName %></a>
+<% }) %>
+<br>
+<br>
+<a href="/trips/menu">BACK</a>
 </body>
 </html>

@@ -57,7 +57,7 @@ var previousTripSchema = new mongoose.Schema({
 var travelerSchema = new mongoose.Schema({
     name: String,
     googleId: String,
-    previousTrip: [previousTripSchema],
+    previousTrips: [previousTripSchema],
     // upcomingTrip: [upcomingTripSchema]
 }, {
     timestamps: true

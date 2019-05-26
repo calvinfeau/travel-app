@@ -7,6 +7,7 @@ module.exports = {
     createTrip
 };
 
+
 function menu(req, res, next) {
     // Make the query object to use with Student.find based up
     // the user has submitted the search form or now
@@ -14,33 +15,41 @@ function menu(req, res, next) {
     // Default to sorting by name
     let sortKey = req.query.sort || 'name';
     Traveler.find(modelQuery)
-    .sort(sortKey).exec(function(err, travelers) {
+    // .sort(sortKey)
+    .exec(function(err, traveler) {
       if (err) return next(err);
       // Passing search values, name & sortKey, for use in the EJS
       res.render('menu', { 
-        travelers, 
-        user: req.user,
-        name: req.query.name, 
-        sortKey 
+        traveler: req.user, 
+        // user: req.user,
+        // name: req.query.name, 
+        // sortKey 
         });
     });
 }
 
 function newTrip(req, res) {
-    // console.log('newtrip reached');
-    Traveler.findById(req.params.userId, function(err, traveler) {
-        console.log('traveler:', traveler);
-        res.render('trips/new', {traveler});
+    let travelerId = req.params.travelerId;
+    Traveler.findById(travelerId, function(err, traveler) {
+        res.render('trips/new', {
+            traveler, 
+            travelerId
+        });
     })
 }
 
 function createTrip(req, res) {
-    console.log('req.body:', req.body);
-    res.render('trips/new', {traveler})
-}
+    let travelerId = req.params.travelerId;
+    Traveler.findById(travelerId, function(err, traveler) {
+        traveler.previousTrips.push(req.body);
+        traveler.save(function(err) {
+            res.redirect(`/trips/index/${travelerId}`)
+        })}
+)}
 
 function index(req, res) {
-    console.log('trip list reached');
-    
-    res.render('trips/index');
+    let travelerId = req.params.travelerId;
+    Traveler.findById(travelerId, function(err, traveler) {
+        res.render('trips/index', {traveler});
+    });
 }
