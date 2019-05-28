@@ -2,7 +2,7 @@
 
 <h1>List of previous Trips</h1>
 <%traveler.previousTrips.forEach(function(trip) { %>
-    <a href=""><%= trip.tripName %></a>
+    <a href="/trips/<%= trip._id %>"><%= trip.tripName %></a>
 <% }) %>
 <br>
 <br>

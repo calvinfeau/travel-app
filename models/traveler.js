@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 // var upcomingTripSchema = new mongoose.Schema({})
 
 var activitySchema = new mongoose.Schema({
-    activtyName: {
+    activityName: {
         type: String,
         required: true,
     },
@@ -50,8 +50,8 @@ var previousTripSchema = new mongoose.Schema({
         required: true
     },
     activities: [activitySchema],
-    foodPlaces: [foodSchema],
-    sleepPlaces: [sleepSchema]
+    food: [foodSchema],
+    sleep: [sleepSchema]
 });
 
 var travelerSchema = new mongoose.Schema({

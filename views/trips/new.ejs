@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>Add a new Trip</h1>
-<form action="/trips/<%= travelerId %>" method="POST">
+<form action="/trips" method="POST">
     <label>Trip Name: </label>
     <input type="text" name="tripName">
     <input type="submit" value="Add Trip">
@@ -10,4 +10,3 @@
 <a href="/trips/menu">BACK</a>
 </body>
 </html>
-

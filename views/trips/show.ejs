@@ -1,6 +1,52 @@
 <%- include('../partials/header') %>
 
-<h1>Trip details</h1>
+<h1><%= trip.tripName %></h1>
+<a href="/trips/index">BACK</a>
+<section>
+    <h2>Activities</h2>
+    <% trip.activities.forEach((a) => { %>
+    <div>
+        <a href="">Delete</a>
+        <%= a.activityName %>
+        <a href="">Edit</a>
+        <%= a.city %>
+        <%= a.country %>
+        <%= a.cost %>
+        <%= a.rating %>
+    </div>
+    <% }) %>
+    <div><a href="/tripdetails/activity/<%= trip._id %>">Add</a></div>
+</section>
+<section>
+    <h2>Food</h2>
+    <% trip.food.forEach((f) => { %>
+    <div>
+        <a href="">Delete</a>
+        <%= f.foodSpot %>
+        <a href="">Edit</a>
+        <%= f.city %>
+        <%= f.country %>
+        <%= f.cost %>
+        <%= f.rating %>
+    </div>
+    <% }) %>
+    <div><a href="/tripdetails/food">Add</a></div>
+</section>
+<section>
+    <h2>Sleep</h2>
+    <% trip.sleep.forEach((s) => { %>
+    <div>
+        <a href="">Delete</a>
+        <%= s.placeName %>
+        <a href="">Edit</a>
+        <%= s.city %>
+        <%= s.country %>
+        <%= s.cost %>
+        <%= s.rating %>
+    </div>
+    <% }) %>
+    <div><a href="/tripdetails/food">Add</a></div>
+</section>
 
 </body>
 </html>
