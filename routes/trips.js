@@ -7,6 +7,7 @@ router.get('/new', isLoggedIn, tripsCtrl.newTrip);
 router.get('/index', isLoggedIn, tripsCtrl.index);
 router.get('/:tripId', isLoggedIn, tripsCtrl.show);
 router.post('/', isLoggedIn, tripsCtrl.createTrip);
+router.delete('/:tripId', isLoggedIn, tripsCtrl.deleteTrip);
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();

@@ -3,6 +3,9 @@
 <h1>List of previous Trips</h1>
 <%traveler.previousTrips.forEach(function(trip) { %>
     <a href="/trips/<%= trip._id %>"><%= trip.tripName %></a>
+    <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
 <% }) %>
 <br>
 <br>

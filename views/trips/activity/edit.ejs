@@ -1,1 +1,17 @@
 <%- include('../../partials/header') %>
+
+<h1><%= trip.tripName %></h1>
+
+<form action="/tripdetails/activity/<%= activity._id %>?_method=PUT" method="POST">
+    <label>Name: </label>
+    <input type="text" name="activityName" value="<%= activity.activityName %>">
+    <label>City: </label>
+    <input type="text" name="city" value="<%= activity.city %>">
+    <label>Country: </label>
+    <input type="text" name="country" value="<%= activity.country %>">
+    <label>Average Cost: </label>
+    <input type="number" name="cost" value="<%= activity.cost %>">
+    <label>Rating: </label>
+    <input type="number" name="rating" value="<%= activity.rating %>">
+    <input type="submit" value="Update">
+</form>

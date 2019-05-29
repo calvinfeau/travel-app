@@ -4,48 +4,67 @@
 <a href="/trips/index">BACK</a>
 <section>
     <h2>Activities</h2>
+    <div><a href="/tripdetails/activity/<%= trip._id %>">Add</a></div>
     <% trip.activities.forEach((a) => { %>
     <div>
-        <a href="">Delete</a>
+        <form action="/tripdetails/activity/<%= a._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
+        </form>
         <%= a.activityName %>
-        <a href="">Edit</a>
+        <p>Activity: </p>
+        <a href="/tripdetails/activity/<%= a._id %>/edit">Edit</a>
+        <p>City: </p>
         <%= a.city %>
+        <p>Country: </p>
         <%= a.country %>
+        <p>Cost: </p>
         <%= a.cost %>
+        <p>Rating: </p>
         <%= a.rating %>
     </div>
     <% }) %>
-    <div><a href="/tripdetails/activity/<%= trip._id %>">Add</a></div>
 </section>
 <section>
     <h2>Food</h2>
+    <div><a href="/tripdetails/food/<%= trip._id %>">Add</a></div>
     <% trip.food.forEach((f) => { %>
     <div>
-        <a href="">Delete</a>
+        <form action="/tripdetails/food/<%= f._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+        <a href="/tripdetails/food/<%= f._id %>/edit">Edit</a>
         <%= f.foodSpot %>
-        <a href="">Edit</a>
+        <p>City: </p>
         <%= f.city %>
+        <p>Country: </p>
         <%= f.country %>
+        <p>Cost: </p>
         <%= f.cost %>
+        <p>Rating: </p>
         <%= f.rating %>
     </div>
     <% }) %>
-    <div><a href="/tripdetails/food">Add</a></div>
 </section>
 <section>
     <h2>Sleep</h2>
+    <div><a href="/tripdetails/sleep/<%= trip._id %>">Add</a></div>
     <% trip.sleep.forEach((s) => { %>
     <div>
-        <a href="">Delete</a>
+        <form action="/tripdetails/sleep/<%= s._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+        <a href="/tripdetails/sleep/<%= s._id %>/edit"></a>">Edit</a>
         <%= s.placeName %>
-        <a href="">Edit</a>
+        <p>City: </p>
         <%= s.city %>
+        <p>Country: </p>
         <%= s.country %>
+        <p>Cost: </p>
         <%= s.cost %>
+        <p>Rating: </p>
         <%= s.rating %>
     </div>
     <% }) %>
-    <div><a href="/tripdetails/food">Add</a></div>
 </section>
 
 </body>

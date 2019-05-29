@@ -4,8 +4,9 @@ module.exports = {
     menu,
     newTrip, 
     index,
+    show,
     createTrip,
-    show
+    deleteTrip
 };
 
 function menu(req, res, next) {
@@ -43,7 +44,7 @@ function createTrip(req, res) {
     Traveler.findById(travelerId, function(err, traveler) {
         traveler.previousTrips.push(req.body);
         traveler.save(function(err) {
-            res.redirect(`/trips/index`)
+            res.redirect('/trips/index')
         });
     }
 )}
@@ -67,10 +68,25 @@ function show(req, res) {
         // });
         traveler.previousTrips.forEach(t =>{
             if (t._id.toString() == tripId.toString()){
-                trip = t
+                trip = t;
             }
         })
         res.render('trips/show', {trip});
         // console.log('trip: ', trip);
         });
+}
+
+function deleteTrip(req, res) {
+    let tripId = req.params.tripId;
+    let travelerId = req.user._id;
+    Traveler.findById(travelerId, function(err, traveler) {
+        traveler.previousTrips.forEach((t, idx, arr) =>{
+            if (t._id.toString() == tripId.toString()){
+                arr.splice(idx, 1);
+            }
+        })
+        traveler.save(function(err) {
+            res.redirect('/trips/index');
+        });
+    })
 }

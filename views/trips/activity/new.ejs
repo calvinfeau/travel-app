@@ -1,7 +1,7 @@
 <%- include('../../partials/header') %>
-
+<h1><%= trip.tripName %></h1>
 <h3>new activity</h3>
-<form action="/tripdetails/<%= trip._id %>" method="POST">
+<form action="/tripdetails/activity/<%= trip._id %>" method="POST">
     <label>Name: </label>
     <input type="text" name="activityName">
     <label>City: </label>
@@ -14,3 +14,6 @@
     <input type="number" name="rating">
     <input type="submit" value="Submit">
 </form>
+
+</body>
+</html>
