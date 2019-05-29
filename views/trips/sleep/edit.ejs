@@ -1,7 +1,16 @@
-<%- include('../../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Travel App</title>
+</head>
+<body>
 
 <h1><%= trip.tripName %></h1>
-
+<a href="/trips/<%= trip._id %>">Back</a>
 <form action="/tripdetails/sleep/<%= sleep._id %>?_method=PUT" method="POST">
     <label>Name: </label>
     <input type="text" name="placeName" value="<%= sleep.placeName %>">
@@ -13,5 +22,11 @@
     <input type="number" name="cost" value="<%= sleep.cost %>">
     <label>Rating: </label>
     <input type="number" name="rating" value="<%= sleep.rating %>">
+    <label>From <%= sleep.startDate.toDateString() %></label>
+    <input type="date" name="startDate">
+    <label>To <%= sleep.endDate.toDateString() %></label>
+    <input type="date" name="endDate">
     <input type="submit" value="Update">
 </form>
+</body>
+</html>

@@ -9,8 +9,8 @@ var activitySchema = new mongoose.Schema({
     },
     city: String,
     country: String,
-    // date: Date,
-    // endDate: Date,
+    startDate: Date,
+    endDate: Date,
     cost: Number,
     rating: Number,
     // photo: Image
@@ -23,8 +23,7 @@ var foodSchema = new mongoose.Schema({
     },
     city: String,
     country: String,
-    // date: Date,
-    // endDate: Date,
+    day: Date,
     cost: Number,
     rating: Number,
     // photo: Image
@@ -37,8 +36,8 @@ var sleepSchema = new mongoose.Schema({
     },
     city: String,
     country: String,
-    // date: Date,
-    // endDate: Date,
+    startDate: Date,
+    endDate: Date,
     cost: Number,
     rating: Number,
     // photo: Image

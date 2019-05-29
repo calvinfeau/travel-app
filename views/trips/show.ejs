@@ -1,4 +1,13 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Travel App</title>
+</head>
+<body>
 
 <h1><%= trip.tripName %></h1>
 <a href="/trips/index">BACK</a>
@@ -21,6 +30,11 @@
         <%= a.cost %>
         <p>Rating: </p>
         <%= a.rating %>
+        <p>From: </p>
+        <%= a.startDate.toDateString() %>
+        <p>To: </p>
+        <%= a.endDate.toDateString() %>
+
     </div>
     <% }) %>
 </section>
@@ -42,6 +56,8 @@
         <%= f.cost %>
         <p>Rating: </p>
         <%= f.rating %>
+        <p>Day: </p>
+        <%= f.day.toDateString() %>
     </div>
     <% }) %>
 </section>
@@ -63,6 +79,10 @@
         <%= s.cost %>
         <p>Rating: </p>
         <%= s.rating %>
+        <p>From: </p>
+        <%= s.startDate.toDateString() %>
+        <p>To: </p>
+        <%= s.endDate.toDateString() %>
     </div>
     <% }) %>
 </section>

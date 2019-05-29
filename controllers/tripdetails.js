@@ -256,6 +256,8 @@ function updateFood(req, res) {
                     f.cost = req.body.cost : -1,
                     req.body.rating ? 
                     f.rating = req.body.rating : -1,
+                    req.body.day ? 
+                    f.day = req.body.day : -1,
                     trip = t) 
                 : -1;
             });
