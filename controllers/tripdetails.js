@@ -155,8 +155,8 @@ function editActivity(req, res) {
     let activityId = req.params.activityId;
     let trip, activity;
     Traveler.findById(travelerId, function (err, traveler) {
-        traveler.previousTrips.forEach((t) => {
-            t.activities.forEach((a, idx, arr) => {
+        traveler.previousTrips.forEach(t => {
+            t.activities.forEach(a => {
                 if (a._id.toString() == activityId.toString()) {
                     trip = t;
                     activity = a;
@@ -171,44 +171,125 @@ function editActivity(req, res) {
 }
 
 function editFood(req, res) {
-
+    let travelerId = req.user._id;
+    let foodId = req.params.foodId;
+    let trip, food;
+    Traveler.findById(travelerId, function (err, traveler) {
+        traveler.previousTrips.forEach(t => {
+            t.food.forEach(f => {
+                if (f._id.toString() == foodId.toString()) {
+                    trip = t;
+                    food = f;
+                }
+            });
+        });
+        res.render('trips/food/edit', {
+            trip,
+            food
+        });
+    });
 }
 
 function editSleep(req, res) {
-
+    let travelerId = req.user._id;
+    let sleepId = req.params.sleepId;
+    let trip, sleep;
+    Traveler.findById(travelerId, function (err, traveler) {
+        traveler.previousTrips.forEach(t => {
+            t.sleep.forEach(s => {
+                if (s._id.toString() == sleepId.toString()) {
+                    trip = t;
+                    sleep = s;
+                }
+            });
+        });
+        res.render('trips/sleep/edit', {
+            trip,
+            sleep
+        });
+    });
 }
 
 function updateActivity(req, res) {
-    console.log(req.body);
     let travelerId = req.user._id;
     let activityId = req.params.activityId;
     let trip;
     Traveler.findById(travelerId, function(err, traveler) {
         traveler.previousTrips.forEach(t => {
             t.activities.forEach((a, idx, arr) => {
-                if (a._id.toString() == activityId.toString()) {
-                    req.body.activityName ? 
-                    a.activityName = req.body.activityName : -1;
+                a._id.toString() == activityId.toString() ?
+                    (req.body.activityName ? 
+                    a.activityName = req.body.activityName : -1,
                     req.body.city ? 
-                    a.city = req.body.city : -1;
+                    a.city = req.body.city : -1,
                     req.body.country ? 
-                    a.country = req.body.country : -1;
+                    a.country = req.body.country : -1,
                     req.body.cost ? 
-                    a.cost = req.body.cost : -1;
+                    a.cost = req.body.cost : -1,
                     req.body.rating ? 
-                    a.rating = req.body.rating : -1;
-                    trip = t;
-        }})})
+                    a.rating = req.body.rating : -1,
+                    trip = t)
+                : -1;
+            });
+        });
         traveler.save(function(err) {
             res.redirect(`/trips/${trip._id}`)
-        })
+        });
     });
 }
 
 function updateFood(req, res) {
-
+    let travelerId = req.user._id;
+    let foodId = req.params.foodId;
+    let trip;
+    Traveler.findById(travelerId, function(err, traveler) {
+        traveler.previousTrips.forEach(t => {
+            t.food.forEach(f => {
+                f._id.toString() == foodId.toString() ? 
+                    (req.body.foodSpot ? 
+                    f.foodSpot = req.body.foodSpot : -1,
+                    req.body.city ? 
+                    f.city = req.body.city : -1,
+                    req.body.country ? 
+                    f.country = req.body.country : -1,
+                    req.body.cost ? 
+                    f.cost = req.body.cost : -1,
+                    req.body.rating ? 
+                    f.rating = req.body.rating : -1,
+                    trip = t) 
+                : -1;
+            });
+        });
+        traveler.save(function(err) {
+            res.redirect(`/trips/${trip._id}`)
+        });
+    });
 }
 
 function updateSleep(req, res) {
-
+    let travelerId = req.user._id;
+    let sleepId = req.params.sleepId;
+    let trip;
+    Traveler.findById(travelerId, function(err, traveler) {
+        traveler.previousTrips.forEach(t => {
+            t.sleep.forEach(s => {
+                s._id.toString() == sleepId.toString() ? 
+                    (req.body.placeName ? 
+                    s.placeName = req.body.placeName : -1,
+                    req.body.city ? 
+                    s.city = req.body.city : -1,
+                    req.body.country ? 
+                    s.country = req.body.country : -1,
+                    req.body.cost ? 
+                    s.cost = req.body.cost : -1,
+                    req.body.rating ? 
+                    s.rating = req.body.rating : -1,
+                    trip = t) 
+                : -1;
+            });
+        });
+        traveler.save(function(err) {
+            res.redirect(`/trips/${trip._id}`)
+        });
+    });
 }

@@ -22,7 +22,6 @@ router.put('/activity/:activityId', isLoggedIn, tripdetailsCtrl.updateActivity);
 router.put('/food/:foodId', isLoggedIn, tripdetailsCtrl.updateFood);
 router.put('/sleep/:sleepId', isLoggedIn, tripdetailsCtrl.updateSleep);
 
-router
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
     res.redirect('/auth/google');

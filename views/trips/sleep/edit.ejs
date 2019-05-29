@@ -1,0 +1,17 @@
+<%- include('../../partials/header') %>
+
+<h1><%= trip.tripName %></h1>
+
+<form action="/tripdetails/sleep/<%= sleep._id %>?_method=PUT" method="POST">
+    <label>Name: </label>
+    <input type="text" name="placeName" value="<%= sleep.placeName %>">
+    <label>City: </label>
+    <input type="text" name="city" value="<%= sleep.city %>">
+    <label>Country: </label>
+    <input type="text" name="country" value="<%= sleep.country %>">
+    <label>Average Cost: </label>
+    <input type="number" name="cost" value="<%= sleep.cost %>">
+    <label>Rating: </label>
+    <input type="number" name="rating" value="<%= sleep.rating %>">
+    <input type="submit" value="Update">
+</form>
