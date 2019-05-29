@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/menu.css' />
     <title>Travel App</title>
 </head>
 <body>
-    <h1>Hi <%=traveler.name%></h1>
-    <a href="/logout">Log Out</a>
+    <nav>
+        <p>Hi <%=traveler.name%></p>
+        <a href="/logout">Log Out</a>
+    </nav>
     <a href="/trips/new">New Trip</a>
     <a href="/trips/index">Previous Trips</a>
+    <a href="">Upcomimg Trips - Coming Soon!</a>
 </body>
 </html>
