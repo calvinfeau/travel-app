@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/new.css' />
     <title>Travel App</title>
 </head>
 <body>
-
-<h1>Add a new Trip</h1>
+<nav>
+    <p>New Trip</p>
+    <a href="/trips/menu">Back</a>
+</nav>
 <form action="/trips" method="POST">
-    <label>Trip Name: </label>
-    <input type="text" name="tripName">
+    <label>Trip Name</label>
+    <input type="text" name="tripName" autocomplete="off">
     <input type="submit" value="Add Trip">
 </form>
-<br>
-<a href="/trips/menu">BACK</a>
 </body>
 </html>

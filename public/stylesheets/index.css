@@ -1,0 +1,76 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    /* padding-bottom: 25vh; */
+    font: 4vh 'Oxygen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-content: center;
+    align-items: center;
+    background-color: #E4E7E3;
+    color: #3A687E;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    width: 90vw;
+    height: 25vh;
+    padding: 0 5vw;
+    margin: 0 0 5vh 0;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background-color: #3A687E;
+    color: #E4E7E3;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav > a {
+    color: #E4E7E3;
+}
+
+section > a {
+    font: 3vh 'Oxygen', sans-serif;
+    color: #3A687E;
+    padding: 0 2vw;
+    border-radius: 5px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 30vw;
+    margin-bottom: 5vh;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="submit"] {
+    background-color: #E4E7E3;
+    border-radius: 5px;
+    border: none;
+    color: #3A687E;
+    font: 2vh 'Oxygen', sans-serif;
+}
+
+section > a:hover {
+    color: #E4E7E3;
+    background-color: #3A687E;
+}
+
+input[type="submit"]:hover {
+    color: #E4E7E3;
+    background-color: #3A687E;
+    cursor: pointer;
+
+}

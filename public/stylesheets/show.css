@@ -1,0 +1,104 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    font: 4vh 'Oxygen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background-color: #E4E7E3;
+    color: #3A687E;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    width: 90vw;
+    height: 25vh;
+    padding: 0 5vw;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background-color: #3A687E;
+    color: #E4E7E3;
+    margin-bottom: 4vh;
+}
+
+body > section {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 95vw;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-size: 3vh;
+    width: 30vw;
+}
+
+article {
+    height: 17vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2vh;
+    margin-bottom: 4vh;
+    padding-top: 3vh; 
+    border-top: 1px solid #3A687E;
+}
+
+nav > a {
+    color: #E4E7E3;
+    text-decoration: none;
+}
+
+section > a {
+    text-decoration: none;
+    color: #3A687E;
+    padding: 1vh 3vw;
+}
+
+article > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+article > div > form > input, article > div > a {
+    color: #3A687E;
+    border: none;
+    padding: 0 0.5vw;
+    text-decoration: none;
+}
+
+a:hover {
+    border-radius: 5px;
+    background-color: #3A687E;
+    color: #E4E7E3;
+}
+
+input[value="X"] {
+    font: 2vh 'Oxygen', sans-serif;
+    border-radius: 5px;
+    /* border: 1px solid #3A687E; */
+    background-color: #E4E7E3;
+}
+
+input[value="X"]:hover {
+    color: #E4E7E3;
+    background-color: #3A687E;
+    cursor: pointer;
+}
