@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
     <link rel='stylesheet' href='/stylesheets/index.css' />
     <title>Travel App</title>
 </head>
@@ -14,7 +15,8 @@
 </nav>
 <%traveler.previousTrips.forEach(function(trip) { %>
     <section>
-        <a href="/trips/<%= trip._id %>"><%= trip.tripName %></a>
+        <a href="/trips/<%= trip._id %>">...</a>
+        <p><%= trip.tripName %></p>
         <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
             <input type="submit" value="X">
         </form>

@@ -1,7 +1,7 @@
 body {
-    height: 95vh;
+    height: 90vh;
     width: 100vw;
-    padding-bottom: 5vh;
+    padding-bottom: 10vh;
     font: 4vh 'Oxygen', sans-serif;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body {
 nav {
     display: flex;
     width: 90vw;
-    height: 25vh;
+    height: 20vh;
     padding: 0 5vw;
     justify-content: space-between;
     align-content: center;

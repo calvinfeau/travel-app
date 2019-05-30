@@ -16,7 +16,7 @@ body {
 nav {
     display: flex;
     width: 90vw;
-    height: 25vh;
+    height: 20vh;
     padding: 0 5vw;
     justify-content: space-between;
     align-content: center;
@@ -31,7 +31,7 @@ a {
 }
 
 form {
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,17 +41,21 @@ form {
 
 input[type="text"] {
     height: 5vh;
+    width: 15vw;
     border-radius: 5px;
+    font-style: italic;
+    text-align: center;
+    color: #3A687E;
     border: 1px solid #3A687E;
     background-color: #E4E7E3;
 }
 
 input[type="submit"] {
     height: 5vh;
-    width: 10vw;
+    width: 15vw;
     border-radius: 5px;
     background-color: #E4E7E3;
-    border: 1px solid #3A687E;
+    border: none;
     color: #3A687E;
     font: 3vh 'Oxygen', sans-serif;
 }

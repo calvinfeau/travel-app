@@ -4,31 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href="/stylesheets/reset.css" />
+    <link rel='stylesheet' href='/stylesheets/newtripdetails.css' />
     <title>Travel App</title>
 </head>
 <body>
-<h1><%= trip.tripName %></h1>
-<h3>new sleep</h3>
-<a href="/trips/<%= trip._id %>">Back</a>
-
-<form action="/tripdetails/sleep/<%= trip._id %>" method="POST">
-    <label>Name: </label>
-    <input type="text" name="placeName">
-    <label>City: </label>
-    <input type="text" name="city">
-    <label>Country: </label>
-    <input type="text" name="country">
-    <label>Average Cost: </label>
-    <input type="number" name="cost">
-    <label>Rating: </label>
-    <input type="number" name="rating">
-    <label>From: </label>
-    <input type="date" name="startDate">
-    <label>To: </label>
-    <input type="date" name="endDate">
-    <input type="submit" value="Submit">
-</form>
-
+    <nav>
+        <p><%= trip.tripName %> - New Sleep</p>
+        <a href="/trips/<%= trip._id %>">Back</a>
+    </nav>
+    <main>
+        <form action="/tripdetails/sleep/<%= trip._id %>" method="POST">
+            <div>
+                <label>Name: </label>
+                <input type="text" name="placeName">
+            </div>
+            <div>
+                <label>City: </label>
+                <input type="text" name="city">
+            </div>
+            <div>
+                <label>Country: </label>
+                <input type="text" name="country">
+            </div>
+            <div>
+                <label>Average Cost: </label>
+                <input type="number" name="cost">
+            </div>
+            <div>
+                <label>Rating: </label>
+                <input type="number" name="rating">
+            </div>
+            <div>
+                <label>From: </label>
+                <input type="date" name="startDate">
+            </div>
+            <div>
+                <label>To: </label>
+                <input type="date" name="endDate">
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
 </body>
 </html>
