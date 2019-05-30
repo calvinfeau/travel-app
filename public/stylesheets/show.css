@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    font: 4vh 'Oxygen', sans-serif;
+    font: 3vh 'Oxygen', sans-serif;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -29,7 +29,7 @@ body > section {
     justify-content: space-around;
     align-content: center;
     align-items: center;
-    width: 95vw;
+    width: 100vw;
     font-size: 2.5vh;
     margin-bottom: 2vh;
 }
@@ -57,6 +57,8 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-content: center;
+    align-items: center;
     font-size: 1.5vh;
     margin-bottom: 2vh;
     padding-top: 2vh; 
@@ -72,16 +74,28 @@ section > a {
     text-decoration: none;
     color: #3A687E;
     padding: 1vh 3vw;
+    margin-bottom: 3vh;
 }
 
 article > div {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    align-content: center;
     height: 5vh;
+    width: 25vw;
 }
 
 .date {
     font-size: 1vh;
+}
+
+.description {
+
+    text-align: center;
+    height: 5vh;
+    width: 20vw;
+    overflow-y: auto;
 }
 
 article > div > form > input, article > div > a {
@@ -97,7 +111,6 @@ a:hover {
     background-color: #3A687E;
     color: #E4E7E3;
 }
-
 
 input[value="X"] {
     font: 1vh 'Oxygen', sans-serif;

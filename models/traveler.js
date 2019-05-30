@@ -12,8 +12,11 @@ var activitySchema = new mongoose.Schema({
     startDate: Date,
     endDate: Date,
     cost: Number,
-    rating: Number,
-    // photo: Image
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5
+    }   
 });
 
 var foodSchema = new mongoose.Schema({
@@ -25,8 +28,11 @@ var foodSchema = new mongoose.Schema({
     country: String,
     day: Date,
     cost: Number,
-    rating: Number,
-    // photo: Image
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5
+    }   
 });
 
 var sleepSchema = new mongoose.Schema({
@@ -39,8 +45,11 @@ var sleepSchema = new mongoose.Schema({
     startDate: Date,
     endDate: Date,
     cost: Number,
-    rating: Number,
-    // photo: Image
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5
+    }   
 });
 
 var previousTripSchema = new mongoose.Schema({

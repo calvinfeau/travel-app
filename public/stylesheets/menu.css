@@ -2,7 +2,7 @@ body {
     height: 90vh;
     width: 100vw;
     padding-bottom: 10vh;
-    font: 4vh 'Oxygen', sans-serif;
+    font: 3vh 'Oxygen', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,6 +38,7 @@ body > a {
 a {
     text-decoration: none;
     color: #E4E7E3;
+    text-align: center;
 }
 
 body > a:hover{

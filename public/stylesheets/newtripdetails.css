@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    font: 4vh 'Oxygen', sans-serif;
+    font: 3vh 'Oxygen', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,7 +15,7 @@ body {
 nav {
     display: flex;
     width: 90vw;
-    height: 25vh;
+    height: 20vh;
     padding: 0 5vw;
     justify-content: space-between;
     align-content: center;
@@ -28,16 +28,19 @@ nav {
 a {
     text-decoration: none;
     color: #E4E7E3;
+    font-size: 3vh;
 }
 
 main {
-    height: 72vh;
+    height: 74vh;
+    width: 50vw;
+    padding-bottom: 3vh;
 }
 
 form {
     font: 2vh 'Oxygen', sans-serif;
-    height: 72vh;
-    width: 35vw;
+    height: 74vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -46,7 +49,7 @@ form {
 }
 
 form > div {
-    width: 35vw;
+    width: 50vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,14 +59,21 @@ span {
     font-style: italic;
 }
 
-input[type="text"], input[type="number"], input[type="date"] {
+.submit-btn {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"], input[type="number"], input[type="date"], select {
     height: 5vh;
+    width: 15vw;
     border-radius: 5px;
     border: 1px solid #3A687E;
     background-color: #E4E7E3;
     text-align: center;
     font-style: italic;
     color: #3A687E;
+    padding: 0;
 }
 
 input[type="submit"] {

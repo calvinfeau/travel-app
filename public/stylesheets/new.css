@@ -1,8 +1,8 @@
 body {
-    height: 75vh;
+    height: 80vh;
     width: 100vw;
-    padding-bottom: 25vh;
-    font: 4vh 'Oxygen', sans-serif;
+    padding-bottom: 20vh;
+    font: 3vh 'Oxygen', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,7 +31,7 @@ a {
 }
 
 form {
-    height: 35vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,7 +41,7 @@ form {
 
 input[type="text"] {
     height: 5vh;
-    width: 15vw;
+    width: 20vw;
     border-radius: 5px;
     font-style: italic;
     text-align: center;
@@ -52,7 +52,7 @@ input[type="text"] {
 
 input[type="submit"] {
     height: 5vh;
-    width: 15vw;
+    width: 20vw;
     border-radius: 5px;
     background-color: #E4E7E3;
     border: none;

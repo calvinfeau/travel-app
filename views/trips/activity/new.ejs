@@ -4,46 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href="/stylesheets/reset.css" />
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <link rel='stylesheet' href="/stylesheets/newtripdetails.css" />
-    <title>Travel App</title>
+    <title>Travel Track</title>
 </head>
 <body>
 <nav>
-    <p><%= trip.tripName %> - New Activity</p>
-    <a href="/trips/<%= trip._id %>">Back</a>
+    <p><%= trip.tripName %></p>
+    <p>New Activity</p>
+    <a href="/trips/<%= trip._id %>">Back &#8594</a>
 </nav>
 <main>
     <form action="/tripdetails/activity/<%= trip._id %>" method="POST">
         <div>
-            <label>Name: </label>
+            <label>Description </label>
             <input type="text" name="activityName">
         </div>
         <div>
-            <label>City: </label>
+            <label>City </label>
             <input type="text" name="city">
         </div>
         <div>
-            <label>Country: </label>
+            <label>Country </label>
             <input type="text" name="country">
         </div>
         <div>
-            <label>Average Cost: </label>
+            <label>Average Cost </label>
             <input type="number" name="cost">
         </div>
         <div>
-            <label>Rating: </label>
-            <input type="number" name="rating">
+            <label>Rating </label>
+            <select type="number" name="rating">
+                <option value="1">&#9733</option>
+                <option value="2">&#9733 &#9733</option>
+                <option value="3">&#9733 &#9733 &#9733</option>
+                <option value="4">&#9733 &#9733 &#9733 &#9733</option>
+                <option value="5">&#9733 &#9733 &#9733 &#9733 &#9733</option>
+            </select>
         </div>
         <div>
-            <label>From: </label>
+            <label>From </label>
             <input type="date" name="startDate">
         </div>
         <div>
-            <label>To: </label>
+            <label>To </label>
             <input type="date" name="endDate">
         </div>
-        <div>
+        <div class="submit-btn">
             <input type="submit" value="Submit">
         </div>
     </form>
