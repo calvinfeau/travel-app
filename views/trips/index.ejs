@@ -10,11 +10,11 @@
     <title>Travel Track</title>
 </head>
 <body>
-<nav>
-    <p>Previous Trips</p>
-    <a href="/trips/menu">Back &#8594</a>
-</nav>
-<%traveler.previousTrips.forEach(function(trip) { %>
+    <nav>
+        <p>Previous Trips</p>
+        <a href="/trips/menu">Back &#8594</a>
+    </nav>
+    <%traveler.previousTrips.forEach(function(trip) { %>
     <section>
         <a href="/trips/<%= trip._id %>">...</a>
         <p><%= trip.tripName %></p>
@@ -22,8 +22,6 @@
             <input type="submit" value="X">
         </form>
     </section>
-<% }) %>
-
-
+    <% }) %>
 </body>
 </html>

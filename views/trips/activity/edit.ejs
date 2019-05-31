@@ -10,50 +10,50 @@
     <title>Travel Track</title>
 </head>
 <body>
-<nav>
-    <p><%= trip.tripName %></p>
-    <a href="/trips/<%= trip._id %>">Back &#8594</a>
-</nav>
-<main>
-    <form action="/tripdetails/activity/<%= activity._id %>?_method=PUT" method="POST">
-        <div>
-            <label>Name </label>
-            <input type="text" name="activityName" value="<%= activity.activityName %>">
-        </div>
-        <div>
-            <label>City </label>
-            <input type="text" name="city" value="<%= activity.city %>">
-        </div>
-        <div>
-            <label>Country </label>
-            <input type="text" name="country" value="<%= activity.country %>">
-        </div>
-        <div>
-            <label>Average Cost </label>
-            <input type="number" name="cost" value="<%= activity.cost %>">
-        </div>
-        <div>
-            <label>Rating </label>
-            <select type="number" name="rating">
-                <option value="1">&#9733</option>
-                <option value="2">&#9733 &#9733</option>
-                <option value="3">&#9733 &#9733 &#9733</option>
-                <option value="4">&#9733 &#9733 &#9733 &#9733</option>
-                <option value="5">&#9733 &#9733 &#9733 &#9733 &#9733</option>
-            </select>
-        </div>
-        <div>
-            <label>From <% if (activity.startDate) {%>(<span><%= activity.startDate.toDateString() %></span> )<% } %></label>
-            <input type="date" name="startDate">
-        </div>
-        <div>
-            <label>To <% if (activity.endDate) {%>(<span><%= activity.endDate.toDateString() %></span> )<% } %></label>
-            <input type="date" name="endDate">
-        </div>
-        <div class="submit-btn">
-            <input type="submit" value="Update">
-        </div>
-    </form>
-</main>
+    <nav>
+        <p><%= trip.tripName %></p>
+        <a href="/trips/<%= trip._id %>">Back &#8594</a>
+    </nav>
+    <main>
+        <form action="/tripdetails/activity/<%= activity._id %>?_method=PUT" method="POST">
+            <div>
+                <label>Name </label>
+                <input type="text" name="activityName" value="<%= activity.activityName %>">
+            </div>
+            <div>
+                <label>City </label>
+                <input type="text" name="city" value="<%= activity.city %>">
+            </div>
+            <div>
+                <label>Country </label>
+                <input type="text" name="country" value="<%= activity.country %>">
+            </div>
+            <div>
+                <label>Average Cost </label>
+                <input type="number" name="cost" value="<%= activity.cost %>">
+            </div>
+            <div>
+                <label>Rating </label>
+                <select type="number" name="rating">
+                    <option value="1">&#9733</option>
+                    <option value="2">&#9733 &#9733</option>
+                    <option value="3">&#9733 &#9733 &#9733</option>
+                    <option value="4">&#9733 &#9733 &#9733 &#9733</option>
+                    <option value="5">&#9733 &#9733 &#9733 &#9733 &#9733</option>
+                </select>
+            </div>
+            <div>
+                <label>From <% if (activity.startDate) {%>(<span><%= activity.startDate.toDateString() %></span> )<% } %></label>
+                <input type="date" name="startDate">
+            </div>
+            <div>
+                <label>To <% if (activity.endDate) {%>(<span><%= activity.endDate.toDateString() %></span> )<% } %></label>
+                <input type="date" name="endDate">
+            </div>
+            <div class="submit-btn">
+                <input type="submit" value="Update">
+            </div>
+        </form>
+    </main>
 </body>
 </html>

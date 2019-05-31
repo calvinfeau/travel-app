@@ -14,100 +14,96 @@
         <p><%= trip.tripName %></p>
         <a href="/trips/index">Back &#8594</a>
     </nav>
-    
     <main>
         <section>
             <a href="/tripdetails/activity/<%= trip._id %>">Activities</a>
             <% trip.activities.forEach((a) => { %>
-                <article>
-                    <div>
-                        <a href="/tripdetails/activity/<%= a._id %>/edit">...</a>
-                        <div class="description"><%= a.activityName %></div>
-                        <form action="/tripdetails/activity/<%= a._id %>?_method=DELETE" method="POST">
-                            <input type="submit" value="X">
-                        </form>
-                    </div>
-                    <div>
-                        <p><%= a.city %></p>
-                        <p><%= a.country %></p>
-                        <% if (a.rating) {%>
-                            <p><%= a.rating %> &#9733</p><%}%>
-                        </div>
-                        <div class="date">
-                            <% if (a.cost) { %>
-                                <p>$<%= a.cost %></p><% } %>
-                                <% if (a.startDate) { %>
-                                    <p><%= a.startDate.toDateString()  %>
-                                        <% } %>
-                                        <% if (a.endDate) { %>
-                                            -
-                                            <%= a.endDate.toDateString() %>
-                                            <% } %></p>
-                                        </div>
-                                    </article>
-                                    <% }) %>
-                                </section>
-                                
-                                <section>
-                                    <a href="/tripdetails/food/<%= trip._id %>">Food</a>
-                                    <% trip.food.forEach((f) => { %>
-                                        <article>
-                                            <div>
-                                                <a href="/tripdetails/food/<%= f._id %>/edit">...</a>
-                                                <div class="description"><%= f.foodSpot %></div>
-                                                <form action="/tripdetails/food/<%= f._id %>?_method=DELETE" method="POST">
-                                                    <input type="submit" value="X">
-                                                </form>
-                                            </div>
-                                            <div>
-                                                <p><%= f.city %></p>
-                                                <p><%= f.country %></p>
-                                                <% if (f.rating) { %>
-                                                    <p><%= f.rating %> &#9733</p><% } %>
-                                                </div>
-                                                <div class="date">
-                                                    <% if (f.cost) {%>
-                                                        <p>$<%= f.cost %></p><% } %>
-                                                        <% if (f.day) { %>
-                                                            <p><%= f.day.toDateString() %></p>
-                                                            <% } %>
-                                                        </div> 
-                                                    </article>
-                                                    <% }) %>
-                                                </section>
-                                                
-                                                <section>
-                                                    <a href="/tripdetails/sleep/<%= trip._id %>">Accomodations</a>
-                                                    <% trip.sleep.forEach((s) => { %>
-                                                        <article>
-                                                            <div>
-                                                                <a href="/tripdetails/sleep/<%= s._id %>/edit">...</a>
-                                                                <div class="description"><%= s.placeName %></div>
-                                                                <form action="/tripdetails/sleep/<%= s._id %>?_method=DELETE" method="POST">
-                                                                    <input type="submit" value="X">
-                </form>
-            </div>
-            <div>
-                <p><%= s.city %></p>
-                <p><%= s.country %></p>
-                <% if (s.rating) { %>
-                <p><%= s.rating %> &#9733</p><% } %>
-            </div>
-            <div class="date">
-                <% if (s.cost) { %>
-                <p>$<%= s.cost %></p><% } %>
-                <% if (s.startDate) { %>
-                <p><%= s.startDate.toDateString() %>
+            <article>
+                <div>
+                    <a href="/tripdetails/activity/<%= a._id %>/edit">...</a>
+                    <div class="description"><%= a.activityName %></div>
+                    <form action="/tripdetails/activity/<%= a._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="X">
+                    </form>
+                </div>
+                <div>
+                    <p><%= a.city %></p>
+                    <p><%= a.country %></p>
+                    <% if (a.rating) {%>
+                    <p><%= a.rating %> &#9733</p><%}%>
+                </div>
+                <div class="date">
+                    <% if (a.cost) { %>
+                    <p>$<%= a.cost %></p><% } %>
+                    <% if (a.startDate) { %>
+                    <p><%= a.startDate.toDateString()  %>
+                    <% } %>
+                    <% if (a.endDate) { %>
+                    -
+                    <%= a.endDate.toDateString() %>
+                    <% } %></p>
+                </div>
+            </article>
+            <% }) %>
+        </section>                         
+        <section>
+            <a href="/tripdetails/food/<%= trip._id %>">Food</a>
+            <% trip.food.forEach((f) => { %>
+            <article>
+                <div>
+                    <a href="/tripdetails/food/<%= f._id %>/edit">...</a>
+                    <div class="description"><%= f.foodSpot %></div>
+                    <form action="/tripdetails/food/<%= f._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="X">
+                    </form>
+                </div>
+                <div>
+                    <p><%= f.city %></p>
+                    <p><%= f.country %></p>
+                    <% if (f.rating) { %>
+                    <p><%= f.rating %> &#9733</p><% } %>
+                </div>
+                <div class="date">
+                <% if (f.cost) {%>
+                    <p>$<%= f.cost %></p><% } %>
+                    <% if (f.day) { %>
+                    <p><%= f.day.toDateString() %></p>
                 <% } %>
-                <% if (s.endDate) { %>
-                -
-                <%= s.endDate.toDateString() %></p>
-                <% } %>
-            </div>
-        </article>
-        <% }) %>
-    </section>
-    
+                </div> 
+            </article>
+            <% }) %>
+        </section>                                               
+        <section>
+        <a href="/tripdetails/sleep/<%= trip._id %>">Accomodations</a>
+        <% trip.sleep.forEach((s) => { %>
+            <article>
+                <div>
+                    <a href="/tripdetails/sleep/<%= s._id %>/edit">...</a>
+                    <div class="description"><%= s.placeName %></div>
+                    <form action="/tripdetails/sleep/<%= s._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="X">
+                    </form>
+                </div>
+                <div>
+                    <p><%= s.city %></p>
+                    <p><%= s.country %></p>
+                    <% if (s.rating) { %>
+                    <p><%= s.rating %> &#9733</p><% } %>
+                </div>
+                <div class="date">
+                    <% if (s.cost) { %>
+                    <p>$<%= s.cost %></p><% } %>
+                    <% if (s.startDate) { %>
+                    <p><%= s.startDate.toDateString() %>
+                    <% } %>
+                    <% if (s.endDate) { %>
+                    -
+                    <%= s.endDate.toDateString() %></p>
+                    <% } %>
+                </div>
+            </article>
+            <% }) %>
+        </section>
     </main>
 </body>
 </html>

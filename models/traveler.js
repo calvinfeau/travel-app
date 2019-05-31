@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-// var upcomingTripSchema = new mongoose.Schema({})
-
 var activitySchema = new mongoose.Schema({
     activityName: {
         type: String,
@@ -51,6 +49,8 @@ var sleepSchema = new mongoose.Schema({
         max: 5
     }   
 });
+
+// var upcomingTripSchema = new mongoose.Schema({})
 
 var previousTripSchema = new mongoose.Schema({
     tripName: {

@@ -10,52 +10,51 @@
     <title>Travel Track</title>
 </head>
 <body>
-<nav>
-    <p><%= trip.tripName %></p>
-    <p>New Activity</p>
-    <a href="/trips/<%= trip._id %>">Back &#8594</a>
-</nav>
-<main>
-    <form action="/tripdetails/activity/<%= trip._id %>" method="POST">
-        <div>
-            <label>Description </label>
-            <input type="text" name="activityName">
-        </div>
-        <div>
-            <label>City </label>
-            <input type="text" name="city">
-        </div>
-        <div>
-            <label>Country </label>
-            <input type="text" name="country">
-        </div>
-        <div>
-            <label>Average Cost </label>
-            <input type="number" name="cost">
-        </div>
-        <div>
-            <label>Rating </label>
-            <select type="number" name="rating">
-                <option value="1">&#9733</option>
-                <option value="2">&#9733 &#9733</option>
-                <option value="3">&#9733 &#9733 &#9733</option>
-                <option value="4">&#9733 &#9733 &#9733 &#9733</option>
-                <option value="5">&#9733 &#9733 &#9733 &#9733 &#9733</option>
-            </select>
-        </div>
-        <div>
-            <label>From </label>
-            <input type="date" name="startDate">
-        </div>
-        <div>
-            <label>To </label>
-            <input type="date" name="endDate">
-        </div>
-        <div class="submit-btn">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-</main>
-
+    <nav>
+        <p><%= trip.tripName %></p>
+        <p>New Activity</p>
+        <a href="/trips/<%= trip._id %>">Back &#8594</a>
+    </nav>
+    <main>
+        <form action="/tripdetails/activity/<%= trip._id %>" method="POST">
+            <div>
+                <label>Description </label>
+                <input type="text" name="activityName">
+            </div>
+            <div>
+                <label>City </label>
+                <input type="text" name="city">
+            </div>
+            <div>
+                <label>Country </label>
+                <input type="text" name="country">
+            </div>
+            <div>
+                <label>Average Cost </label>
+                <input type="number" name="cost">
+            </div>
+            <div>
+                <label>Rating </label>
+                <select type="number" name="rating">
+                    <option value="1">&#9733</option>
+                    <option value="2">&#9733 &#9733</option>
+                    <option value="3">&#9733 &#9733 &#9733</option>
+                    <option value="4">&#9733 &#9733 &#9733 &#9733</option>
+                    <option value="5">&#9733 &#9733 &#9733 &#9733 &#9733</option>
+                </select>
+            </div>
+            <div>
+                <label>From </label>
+                <input type="date" name="startDate">
+            </div>
+            <div>
+                <label>To </label>
+                <input type="date" name="endDate">
+            </div>
+            <div class="submit-btn">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
 </body>
 </html>
