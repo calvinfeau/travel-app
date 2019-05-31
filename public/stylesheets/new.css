@@ -32,11 +32,18 @@ a {
 
 form {
     height: 50vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
     align-items: center;
+}
+
+form > div {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
 }
 
 input[type="text"] {

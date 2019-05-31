@@ -27,15 +27,24 @@ function newTrip(req, res) {
 }
 
 function createTrip(req, res) {
+    console.log(req.body.trip);
     let travelerId = req.user._id;
     Traveler.findById(travelerId, function(err, traveler) {
         err ? 
         res.render('trips/index')
         : 
+        req.body.trip == 'upcoming' ? 
+        (traveler.upcomingTrips.push(req.body),
+        traveler.save(function(err) {
+            err ? 
+            res.render('trips/index', {traveler})
+            :
+            res.redirect('/comingtrips/index')
+        })) :  
         (traveler.previousTrips.push(req.body),
         traveler.save(function(err) {
             err ? 
-            res.render('trips/index')
+            res.render('trips/index', {traveler})
             :
             res.redirect('/trips/index')
         }));
@@ -46,7 +55,7 @@ function index(req, res) {
     let travelerId = req.user._id;
     Traveler.findById(travelerId, function(err, traveler) {
         err ? 
-        res.render('trips/index')
+        res.render('trips/menu')
         : 
         res.render('trips/index', { traveler });
     });

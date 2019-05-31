@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='/stylesheets/reset.css' />
+        <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/stylesheets/newtripdetails.css' />
+        <title>Travel Track</title>
+</head>
+<body>
+    <nav>
+        <p><%= trip.tripName %></p>
+        <a href="/comingtrips/<%= trip._id %>">Back &#8594</a>
+    </nav>
+    <main>
+        <form action="/comingtrips/detail/<%= trip._id %>" method="POST">
+            <div>
+                <label>Description </label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label>Done</label>
+                <input type="checkbox" name="done" value="true">
+            </div>
+            <div>
+                <label>Date </label>
+                <input type="date" name="day">
+            </div>
+            <div>
+                <label>Average Cost </label>
+                <input type="number" name="cost">
+            </div>
+            <div class="submit-btn">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
+</body>
+</html>

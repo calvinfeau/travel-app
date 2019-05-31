@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel='stylesheet' href='/stylesheets/reset.css' />
+        <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/stylesheets/upcomingtrips.css' />
+        <title>Travel Track</title>
+</head>
+<body>
+    <nav>
+        <p><%= trip.tripName %></p>
+        <a href="/comingtrips/index">Back &#8594</a>
+    </nav>
+    <main>
+        <section>
+            <form action="/comingtrips/<%= trip._id %>" method="POST">
+                <input style="font-weight: bold" type="text" name="tripName" value="<%= trip.tripName %>">
+                <label>From
+                <% if (trip.startDate) { %>
+                <%=trip.startDate.toLocaleDateString() %><% } %></label>
+                <input class="date" type="date" name="startDate">
+                <label>To
+                <% if (trip.endDate) { %>
+                <%= trip.endDate.toLocaleDateString()  %><% } %></label>
+                <input class="date" type="date" name="endDate">
+                <label>Budget</label>
+                <% if (trip.budget) { %>
+                <input type="number" name="budget" value="<%= trip.budget %>"> <% } else { %>
+                <input type="number" name="budget"><% } %>
+                <label>Memo</label>
+                <% if (trip.comments) { %>
+                <input class="description" type="text" name="comments" value="<%= trip.comments %>"><% } else { %> 
+                <input class="description" type="text" name="comments"><% } %>
+                <input id="reset" type="submit" value="&#8635">
+            </form>
+        </section>
+        <section>
+            <a href="/comingtrips/new/<%= trip._id %>">Add Details</a>
+            <% trip.reserved.forEach(function(r) { %>
+            <article>
+                <div>
+                    <a href="/comingtrips/<%= r._id %>/edit">...</a>
+                    <div class="description"><%= r.name %></div>
+                    <form action="/comingtrips/<%= r._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="X">
+                    </form>
+                </div>
+                <div>
+                    <% if (r.done) { %>
+                    <p>It's done!</p>
+                    <% } else { %> 
+                    <p>Not done yet</p>
+                    <% } %>
+                    <% if (r.cost) { %>
+                    <p>$<%= r.cost %></p>
+                    <% } %>
+                    <% if (r.day) { %>
+                    <p><%= r.day.toLocaleDateString() %>
+                    <% } %>
+                    </p>
+                </div>
+            </article>     
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>

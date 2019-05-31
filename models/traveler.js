@@ -1,5 +1,27 @@
 var mongoose = require('mongoose');
 
+var reservedSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    done: Boolean,
+    day: Date,
+    cost: Number
+});
+
+var upcomingTripSchema = new mongoose.Schema({
+    tripName: {
+        type: String,
+        required: true
+    },
+    reserved: [reservedSchema],
+    budget: Number,
+    startDate: Date,
+    endDate: Date,
+    comments: String
+});
+
 var activitySchema = new mongoose.Schema({
     activityName: {
         type: String,
@@ -12,7 +34,7 @@ var activitySchema = new mongoose.Schema({
     cost: Number,
     rating: {
         type: Number,
-        min: 1,
+        min: 0,
         max: 5
     }   
 });
@@ -28,7 +50,7 @@ var foodSchema = new mongoose.Schema({
     cost: Number,
     rating: {
         type: Number,
-        min: 1,
+        min: 0,
         max: 5
     }   
 });
@@ -45,12 +67,10 @@ var sleepSchema = new mongoose.Schema({
     cost: Number,
     rating: {
         type: Number,
-        min: 1,
+        min: 0,
         max: 5
-    }   
+    }
 });
-
-// var upcomingTripSchema = new mongoose.Schema({})
 
 var previousTripSchema = new mongoose.Schema({
     tripName: {
@@ -66,7 +86,7 @@ var travelerSchema = new mongoose.Schema({
     name: String,
     googleId: String,
     previousTrips: [previousTripSchema],
-    // upcomingTrip: [upcomingTripSchema]
+    upcomingTrips: [upcomingTripSchema]
 }, {
     timestamps: true
 });

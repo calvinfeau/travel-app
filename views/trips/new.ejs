@@ -17,6 +17,14 @@
     <form action="/trips" method="POST">
         <label>Trip Name</label>
         <input type="text" name="tripName" autocomplete="off">
+        <div>
+            <article>
+                <input type="checkbox" name="trip" value="previous" >Previous Trip
+            </article>
+            <article>
+                <input type="checkbox" name="trip" value="upcoming" >Upcoming Trip
+            </article>
+        </div>
         <input type="submit" value="Add Trip">
     </form>
 </body>
